@@ -1,0 +1,20 @@
+.dao {
+  padding: 50px 0;
+  background-color: #FAF9FA;
+
+  &__title {
+    margin-bottom: 46px;
+    font-weight: 700;
+    font-size: 28px;
+    color: $color-title;
+    text-align: center;
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px 67px;
+  }
+}

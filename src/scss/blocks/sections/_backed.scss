@@ -1,0 +1,175 @@
+@mixin box-checkers-black {
+  background: #FAFBFD;
+}
+
+@mixin box-checkers-white {
+  background: #FFFFFF;
+}
+
+.backed {
+  padding: 32px 0;
+
+  &__title {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.22;
+    color: $color-title;
+  }
+
+  &__text {
+    margin-bottom: 35px;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    color: $color-text-accent;
+  }
+
+  &__grid {
+    padding: 10px 0;
+    display: grid;
+    column-gap: 20px;
+    row-gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  &__box {
+    padding: 20px;
+    padding-bottom: 16px;
+    border-radius: 4px;
+    box-shadow: 0px 4px 144px rgba(0, 0, 0, 0.07);
+
+    &:nth-child(8n + 1),
+    &:nth-child(8n + 3),
+    &:nth-child(8n + 6),
+    &:nth-child(8n + 8) {
+      @include box-checkers-black;
+    }
+
+    &:nth-child(8n + 2),
+    &:nth-child(8n + 4),
+    &:nth-child(8n + 5),
+    &:nth-child(8n + 7) {
+      @include box-checkers-white;
+    }
+  }
+
+  &__image {
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    background-color: #648596;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  &__name {
+    margin-bottom: 4px;
+    letter-spacing: -0.8px;
+  }
+
+  &__socials-list {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__social-link {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    &--twitter {
+      width: 12px;
+      height: 12px;
+      background-image: url('@img/icons.svg#backed_twitter');
+    }
+
+    &--linkedin {
+      width: 17px;
+      height: 17px;
+      background-image: url('@img/icons.svg#backed_linkedin');
+    }
+  }
+}
+
+@include breakpoint-down(xl) {
+  .backed {
+    &__grid {
+      column-gap: 20px;
+    }
+  }
+}
+
+@include breakpoint-down(lg) {
+  .backed {
+    &__grid {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    &__box {
+
+      &:nth-child(9n + 1),
+      &:nth-child(9n + 3),
+      &:nth-child(9n + 5),
+      &:nth-child(9n + 7),
+      &:nth-child(9n + 9) {
+        @include box-checkers-black;
+      }
+
+      &:nth-child(9n + 2),
+      &:nth-child(9n + 4),
+      &:nth-child(9n + 6),
+      &:nth-child(9n + 8) {
+        @include box-checkers-white;
+      }
+    }
+  }
+}
+
+@include breakpoint-down(md) {
+  .backed {
+    &__grid {
+      column-gap: 35px;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(4, 1fr);
+    }
+
+    &__box {
+
+      &:nth-child(4n + 1),
+      &:nth-child(4n + 4) {
+        @include box-checkers-black;
+      }
+
+      &:nth-child(4n + 2),
+      &:nth-child(4n + 3) {
+        @include box-checkers-white;
+      }
+    }
+  }
+}
+
+@include breakpoint-down(sm) {
+  .backed {
+    &__grid {
+      column-gap: 25px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(8, 1fr);
+    }
+
+    &__box {
+
+      &:nth-child(2n + 1) {
+        @include box-checkers-black;
+      }
+
+      &:nth-child(2n + 2) {
+        @include box-checkers-white;
+      }
+    }
+  }
+}

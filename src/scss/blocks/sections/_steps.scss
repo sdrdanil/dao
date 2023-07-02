@@ -1,0 +1,102 @@
+.steps {
+  letter-spacing: 0.2px;
+
+  &__inner {
+    display: grid;
+    column-gap: 20px;
+    row-gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  &__head-box {
+    padding-top: 0px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__box {
+    padding: 55px 40px 94px;
+    border: 1px solid #EFEFF4;
+    border-radius: 8px;
+    transition: .4s ease;
+
+    &:hover {
+      border-color: #FAFBFD;
+      background-color: #FAFBFD;
+    }
+  }
+
+  &__title {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.22;
+    color: $color-title;
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.71;
+    color: $color-text-main;
+  }
+
+  &__image-wrapper {
+    display: inline-block;
+    margin-bottom: 40px;
+    padding: 21px;
+    border-radius: 50%;
+    background-color: #FAFBFD;
+    transition: .4s ease;
+  }
+
+  &__box:hover &__image-wrapper {
+    background-color: white;
+    box-shadow: 0px 6px 15px 0px rgba(35, 36, 39, 0.05);
+  }
+
+  &__icon {
+    width: 35px;
+  }
+
+  &__box-title {
+    margin-bottom: 16px;
+    font-weight: 800;
+    font-size: 18px;
+    color: $color-title;
+  }
+}
+
+@include breakpoint-down(xl) {
+  .steps {
+    &__box {
+      padding: 50px 30px;
+    }
+  }
+}
+
+@include breakpoint-down(lg) {
+  .steps {
+    &__inner {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 30px;
+    }
+  }
+}
+
+@include breakpoint-down(sm) {
+  .steps {
+    &__inner {
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 10px;
+    }
+
+    &__box {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}
+
